@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Property;
+use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
@@ -29,6 +30,8 @@ class PropertyFixture extends Fixture
     			->setAddress($faker->address)
     			->setPostalCode($faker->postcode)
     			->setSold(false)
+    			->setFileName($i);
+    			
     			;
     		$manager->persist($property);
     	}
